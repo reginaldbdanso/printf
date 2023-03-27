@@ -37,15 +37,6 @@ int _printf(const char *format, ...)
 					index++;
 					break;
 
-				case 'd':
-					counter  += _putchar(va_arg(argums, int));
-					index++;
-					break;
-
-				case 'i':
-					counter += _putchar(va_arg(argums, int));
-					index++;
-					break;
 				default:
 					counter += _putchar(format[index]);
 			}
