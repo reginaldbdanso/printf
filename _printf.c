@@ -61,39 +61,39 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 
-int _switch_case_function(char c, va_list newargums)
+int _switch_case_function(char c, ...)
 {
-	/*va_list newargums;*/
+	va_list newargums;
 	int counter = 0;
 
-	/*va_start(newargums, c);*/
+	va_start(newargums, c);
 
 	switch (c)
 	{
 		case 'c':
-			counter += _putchar(/*va_arg(*/newargums/*, int)*/);
+			counter += _putchar(va_arg(newargums, int));
 			break;
 
 		case 's':
-			counter += _puts(/*va_arg(*/newargums/*, char *)*/);
+			counter += _puts(va_arg(newargums, char *));
 			break;
 
 		case '%':
 			counter += _putchar('%');
 			break;
-
+			
 		case 'd':
-			counter  += _putchar(/*va_arg(*/newargums/*, int)*/);
+			counter  += _putchar(va_arg(newargums, int));
 			break;
 
 		case 'i':
-			counter += _putchar(/*va_arg(*/newargums/*, int)*/);
+			counter += _putchar(va_arg(newargums, int));
 			break;
 
 		default:
 			counter += _putchar(c);
 	}
 
-	/*va_end(newargums);*/
+	va_end(newargums);
 	return (counter);
 }
