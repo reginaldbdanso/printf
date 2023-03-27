@@ -8,7 +8,7 @@
 
 int _putchar(char c);
 int _puts(char *s);
-int _switch_case_function(char c, ...);
+int _switch_case_function(char c, va_list newargums);
 
 int _printf(const char *format, ...);
 
