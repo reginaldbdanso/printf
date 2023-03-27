@@ -12,6 +12,10 @@ int _printf(const char *format, ...)
 	int index = 0, counter = 0;
 
 	va_start(argums, format);
+
+	if (format == NULL)
+		return (1);
+
 	for (; format[index] != '\0'; index++)
 	{
 		if (format[index] == '%')
@@ -42,19 +46,6 @@ int _printf(const char *format, ...)
 }
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
-/**
  * _puts - prints a string, followed by a new line, to stdout.
  * @s: pointer
  * Return: number of characters printed
@@ -70,4 +61,17 @@ int _puts(char *s)
 		index++;
 	}
 	return (index);
+}
+
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
 }
