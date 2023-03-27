@@ -13,9 +13,8 @@ int _printf(const char *format, ...)
 
 	va_start(argums, format);
 
-	if (format == NULL)
-		return (1);
-
+	if (format)
+	{
 	for (; format[index] != '\0'; index++)
 	{
 		if (format[index] == '%')
@@ -42,6 +41,7 @@ int _printf(const char *format, ...)
 		counter += _putchar(format[index]);
 	}
 	va_end(argums);
+	}
 	return (counter);
 }
 
