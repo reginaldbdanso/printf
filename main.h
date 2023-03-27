@@ -8,6 +8,8 @@
 
 int _putchar(char c);
 int _puts(char *s);
+int _switch_case_function(char c, ...);
+
 int _printf(const char *format, ...);
 
 #endif

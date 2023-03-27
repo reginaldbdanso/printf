@@ -20,26 +20,8 @@ int _printf(const char *format, ...)
 	{
 		if (format[index] == '%')
 		{
-			switch (format[index + 1])
-			{
-				case 'c':
-					counter += _putchar(va_arg(argums, int));
-					index++;
-					break;
-
-				case 's':
-					counter += _puts(va_arg(argums, char *));
-					index++;
-					break;
-
-				case '%':
-					counter += _putchar('%');
-					index++;
-					break;
-
-				default:
-					counter += _putchar(format[index]);
-			}
+			counter += _switch_case_function(format[index + 1], format[index]);
+			index++;
 			continue;
 		}
 		counter += _putchar(format[index]);
@@ -77,4 +59,33 @@ int _puts(char *s)
 int _putchar(char c)
 {
 	return (write(1, &c, 1));
+}
+
+int _switch_case_function(char c, ...)
+{
+	va_list newargums;
+	int counter = 0;
+
+	va_start(newargums, c);
+
+	switch (c)
+	{
+		case 'c':
+			counter += _putchar(va_arg(newargums, int));
+			break;
+
+		case 's':
+			counter += _puts(va_arg(newargums, char *));
+			break;
+
+		case '%':
+			counter += _putchar('%');
+			break;
+
+		default:
+			counter += _putchar(c);
+	}
+
+	va_end(newargums);
+	return (counter);
 }
