@@ -82,6 +82,14 @@ int _switch_case_function(char c, ...)
 			counter += _putchar('%');
 			break;
 
+		case 'd':
+			counter  += _putchar(va_arg(newargums, int));
+			break;
+
+		case 'i':
+			counter += _putchar(va_arg(newargums, int));
+			break;
+
 		default:
 			counter += _putchar(c);
 	}
