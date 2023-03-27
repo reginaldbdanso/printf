@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[index] == '%')
 		{
-			counter += _switch_case_function(format[index + 1], argums);
+			/*counter += _switch_case_function(format[index + 1], argums);*/
 			index++;
 			continue;
 		}
@@ -81,7 +81,7 @@ int _switch_case_function(char c, ...)
 		case '%':
 			counter += _putchar('%');
 			break;
-			
+
 		case 'd':
 			counter  += _putchar(va_arg(newargums, int));
 			break;
