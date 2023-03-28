@@ -10,6 +10,7 @@
 int _switch_case_function(const char *c, va_list newargums)
 {
 	int counter = 0;
+	char *s;
 
 	switch (*c)
 	{
@@ -18,7 +19,10 @@ int _switch_case_function(const char *c, va_list newargums)
 			break;
 
 		case 's':
-			counter += _puts(va_arg(newargums, char *));
+			s = va_arg(newargums, char *);
+			if (s == NULL)
+				s = "(null)";
+			counter += _puts(s);
 			break;
 
 		case '%':
@@ -26,9 +30,6 @@ int _switch_case_function(const char *c, va_list newargums)
 			break;
 
 		case 'd':
-			counter += _print_int(va_arg(newargums, int));
-			break;
-
 		case 'i':
 			counter += _print_int(va_arg(newargums, int));
 			break;
