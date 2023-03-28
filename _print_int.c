@@ -1,16 +1,17 @@
 #include "main.h"
+
 /**
- * print_bin - prints an integer as a string.
- * @num: positive number to be printed
+ * print_int - prints an integer as a string.
+ * @num: number to be printed
  * Return: number of characters printed
  */
 
-int print_bin(unsigned int num)
+int _print_int(int num)
 {
-	int i, rder, counter = 0, index = 0, temp_num = num, num_digits = 0;
+	int i, counter = 0, index = 0, temp_num = num, num_digits = 0;
 	char *str;
 
-
+	/* count the number of digits in the number*/
 	do {
 	num_digits++;
 	temp_num /= 10;
@@ -21,11 +22,17 @@ int print_bin(unsigned int num)
 	if (str == NULL)
 		return (1);
 
-	/* convert the number to binary*/
+	/* handle negative numbers*/
+	if (num < 0)
+	{
+		counter += _putchar('-');
+		num = -num;
+	}
+
+	/* convert the number to a string*/
 	do {
-	rder = num % 2;
-	num = num / 2;
-	str[index++] = rder + '0';
+	str[index++] = num % 10 + '0';
+	num /= 10;
 	} while (num > 0);
 
 	/* write the string to stdout in reverse order*/
