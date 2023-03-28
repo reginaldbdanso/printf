@@ -37,13 +37,11 @@ int _switch_case_function(const char *c, va_list newargums)
 		case 'b':
 			counter += _print_bin(va_arg(newargums, int));
 			break;
-		case ' ':
-			counter += _putchar(*(c - 1));
-			counter += _putchar(*(c));
 
 		default:
 			counter += _putchar(*(c - 1));
 			counter += _putchar(*(c));
+			break;
 	}
 	return (counter);
 }

@@ -20,9 +20,16 @@ int _printf(const char *format, ...)
 	{
 		if (format[index] == '%')
 		{
+			if (*(format + index + 1) == '\0')
+			{
+				return (0);
+			}
+			else
+			{
 			counter += _switch_case_function((format + index + 1), argums);
 			index++;
 			continue;
+			}
 
 		}
 		counter += _putchar(format[index]);
