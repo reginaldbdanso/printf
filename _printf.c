@@ -20,9 +20,10 @@ int _printf(const char *format, ...)
 	{
 		if (format[index] == '%')
 		{
-			/*counter += _switch_case_function(format[index + 1], argums);*/
+			counter += _switch_case_function((format + index + 1), argums);
 			index++;
 			continue;
+
 		}
 		counter += _putchar(format[index]);
 	}
@@ -61,14 +62,18 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 
-int _switch_case_function(char c, ...)
+/**
+ * _switch_case_function - switched between different format specifiers.
+ * @c: format character
+ * @newargums: variable of type va_list
+ * Return: number of characters printed
+ */
+
+int _switch_case_function(const char *c, va_list newargums)
 {
-	va_list newargums;
 	int counter = 0;
 
-	va_start(newargums, c);
-
-	switch (c)
+	switch (*c)
 	{
 		case 'c':
 			counter += _putchar(va_arg(newargums, int));
@@ -83,17 +88,58 @@ int _switch_case_function(char c, ...)
 			break;
 
 		case 'd':
-			counter  += _putchar(va_arg(newargums, int));
+			counter += print_int(va_arg(newargums, int));
 			break;
 
 		case 'i':
-			counter += _putchar(va_arg(newargums, int));
+			counter += print_int(va_arg(newargums, int));
 			break;
 
 		default:
-			counter += _putchar(c);
+			counter += _putchar(*c);
+	}
+	return (counter);
+}
+
+/**
+ * print_int - prints an integer as a string.
+ * @num: number to be printed
+ * Return: number of characters printed
+ */
+
+int print_int(int num)
+{
+	int i, counter = 0, index = 0, temp_num = num, num_digits = 0;
+	char *str;
+
+	/* count the number of digits in the number*/
+	do {
+	num_digits++;
+	temp_num /= 10;
+	} while (temp_num > 0);
+
+	/* allocate a buffer to hold the string representation of the number*/
+	str = malloc(sizeof(char) * num_digits + 1);
+	if (str == NULL)
+		return (1);
+
+	/* handle negative numbers*/
+	if (num < 0)
+	{
+		counter += _putchar('-');
+		num = -num;
 	}
 
-	va_end(newargums);
+	/* convert the number to a string*/
+	do {
+	str[index++] = num % 10 + '0';
+	num /= 10;
+	} while (num > 0);
+
+	/* write the string to stdout in reverse order*/
+	for (i = index - 1; i >= 0; i--)
+	{
+		counter += write(1, &str[i], 1);
+	}
 	return (counter);
 }
