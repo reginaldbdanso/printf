@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_bin - prints an integer as a string.
+ * _print_bin - prints an integer as a string.
  * @num: positive number to be printed
  * Return: number of characters printed
  */
