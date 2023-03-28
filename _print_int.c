@@ -11,6 +11,8 @@ int _print_int(int num)
 	int i, counter = 0, index = 0, temp_num = num, num_digits = 0;
 	char *str;
 
+	if (num >= INT_MIN && num <= INT_MAX)
+	{
 	/* count the number of digits in the number*/
 	do {
 	num_digits++;
@@ -39,6 +41,11 @@ int _print_int(int num)
 	for (i = index - 1; i >= 0; i--)
 	{
 		counter += write(1, &str[i], 1);
+	}
+	}
+	else
+	{
+		return (0);
 	}
 	return (counter);
 }

@@ -11,6 +11,8 @@ int _print_bin(unsigned int num)
 	int i, rder, counter = 0, index = 0, temp_num = num, num_digits = 0;
 	char *str;
 
+	if (num >= 0 && num <= UINT_MAX)
+	{
 	do {
 	num_digits++;
 	temp_num /= 10;
@@ -32,6 +34,11 @@ int _print_bin(unsigned int num)
 	for (i = index - 1; i >= 0; i--)
 	{
 		counter += write(1, &str[i], 1);
+	}
+	}
+	else
+	{
+		return (0);
 	}
 	return (counter);
 }
