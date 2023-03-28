@@ -10,5 +10,10 @@
 
 int _putchar(char c)
 {
-	return (write(1, &c, 1));
+        int counter;
+        counter = write(1, &c, 1);
+        if (counter == 1)
+                return (counter);
+        else
+                return (0);
 }
