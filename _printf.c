@@ -21,6 +21,7 @@ int _printf(const char *format, ...)
 		if (format[index] == '%')
 		{
 			counter += _switch_case_function((format + index + 1), argums);
+			
 			index++;
 			continue;
 
