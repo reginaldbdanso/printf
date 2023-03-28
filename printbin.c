@@ -16,12 +16,12 @@ int print_bin(unsigned int num)
 	temp_num /= 10;
 	} while (temp_num > 0);
 
-        // handle negative numbers
-    if (num < 0)
-    {
-        _putchar('-');
-        temp_num = -num;
-    }
+	/* handle negative numbers */
+	if (num < 0)
+	{
+	_putchar('-');
+	temp_num = -num;
+	}
 
 	/* allocate a buffer to hold the string representation of the number*/
 	str = malloc(sizeof(char) * num_digits + 1);
@@ -30,8 +30,8 @@ int print_bin(unsigned int num)
 
 	/* convert the number to binary*/
 	do {
-        rder = num % 2;
-        num = num / 2;
+	rder = num % 2;
+	num = num / 2;
 	str[index++] = rder + '0';
 	} while (num > 0);
 
