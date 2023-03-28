@@ -95,6 +95,10 @@ int _switch_case_function(const char *c, va_list newargums)
 			counter += print_int(va_arg(newargums, int));
 			break;
 
+		case 'b':
+			counter += print_bin(va_arg(newargums, int));
+			break;
+
 		default:
 			counter += _putchar(*c);
 	}
