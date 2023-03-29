@@ -14,5 +14,6 @@ int _puts(char *s)
 		_putchar(s[index]);
 		index++;
 	}
+
 	return (index);
 }
