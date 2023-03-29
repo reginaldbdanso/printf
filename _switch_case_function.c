@@ -11,29 +11,16 @@ int _switch_case_function(const char *c, va_list newargums)
 {
 	int counter = 0;
 
-	/* handle format specifiers */
-	switch (*c)
+	if (*c == 'u' || *c == 'o' || *c == 'x' || *c == 'X')
 	{
-		case 'c':
-			counter += _putcharfunc(newargums);
-			break;
-		case 's':
-			counter += _putsfunc(newargums);
-			break;
-		case '%':
-			counter += _putchar('%');
-			break;
-		case 'd':
-		case 'i':
-			counter += _print_intfunc(newargums);
-			break;
-		case 'b':
-			counter += _print_binfunc(newargums);
-			break;
-		default:
-			counter += _putchar(*(c - 1));
-			counter += _putchar(*c);
-			break;
+		/* handle u, o, x and X format specifiers */
+		counter += _switch_case_function1(c, newargums);
+	}
+	else
+	{
+		/* handle c, s, d, i, b, and unknown format specifiers */
+		counter += _switch_case_function2(c, newargums);
+
 	}
 	return (counter);
 }
