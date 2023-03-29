@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		{
 			if (*(format + index + 1) == '\0')
 			{
-				counter += _putchar(format[index]);
+				/*counter += _putchar(format[index]);*/
 				return (-1);
 			}
 			else
