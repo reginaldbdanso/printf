@@ -23,7 +23,7 @@ int _print_intfunc(va_list newargums)
 		tmp = n;
 		while (tmp / 10 > 0)
 		{
-		tmp /= 10;
+			tmp /= 10;
 		i++;
 		}
 		tmp = n;
