@@ -10,7 +10,7 @@
 int _putchar(char c);
 int _puts(char *s);
 int _switch_case_function(const char *c, va_list newargums);
-int _switch_case_function2(const char *c, va_list newargums);
+int _switch_case_function1(const char *c, va_list newargums);
 int _switch_case_function2(const char *c, va_list newargums);
 int _putcharfunc(va_list newargums);
 int _putsfunc(va_list newargums);
