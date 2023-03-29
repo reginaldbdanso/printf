@@ -12,7 +12,7 @@ int _putsfunc(va_list newargums)
 
 	s = va_arg(newargums, char *);
 	if (s == NULL)
-		s = "null";
+		s = "(null)";
 
 	while (s[index] != 0)
 	{
