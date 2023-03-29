@@ -17,5 +17,6 @@ int print_binary(unsigned int num)
 
 	_putchar (num % 2 == 0 ? '0' : '1');
 	count++;
+	
 	return (count);
 }
