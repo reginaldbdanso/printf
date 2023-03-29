@@ -57,7 +57,9 @@ You don’t have to handle the length modifiers
 Handle the following flag characters for non-custom conversion specifiers:
 
 +
+
 space
+
 #
 
 8. Sarcasm is lost in print
