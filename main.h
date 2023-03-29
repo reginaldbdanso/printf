@@ -17,7 +17,6 @@ int _print_binfunc(va_list newargums);
 int print_binary(unsigned int num);
 
 
-
 int _printf(const char *format, ...);
 
 #endif
