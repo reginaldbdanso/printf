@@ -35,6 +35,5 @@ int _switch_case_function(const char *c, va_list newargums)
 			counter += _putchar(*c);
 			break;
 	}
-	continue
 	return (counter);
 }
