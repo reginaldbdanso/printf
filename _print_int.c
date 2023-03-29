@@ -45,7 +45,7 @@ int _print_int(int num)
 	}
 	else
 	{
-		return (0);
+		return (-1);
 	}
 	return (counter);
 }
