@@ -20,8 +20,8 @@ int _print_intfunc(va_list newargums)
 			count++;
 			n = -n;
 		}
-		tmp = n;
 		
+		tmp = n;
 		while (tmp / 10 > 0)
 		{
 			tmp /= 10;
