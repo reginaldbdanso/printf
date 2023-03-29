@@ -8,7 +8,6 @@
 
 int _print_octfunc(va_list newargums)
 {
-	unsigned int tmp;
 	int decimalnum, i = 1, octalnum = 0, counter = 0;
 
 	decimalnum = va_arg(newargums, int);
