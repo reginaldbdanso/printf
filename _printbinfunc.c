@@ -8,10 +8,14 @@
 
 int _print_binfunc(va_list newargums)
 {
-	unsigned int num = va_arg(newargums, int);
+	unsigned int num;
+	int num1 = va_arg(newargums, int);
 	int i, rder, counter = 0, index = 0, temp_num = num, num_digits = 0;
 	char *str;
 
+	if (num1 < 0)
+		num1 *= -1;
+	num = (unsigned int)num1;
 	do {
 	num_digits++;
 	temp_num /= 10;
