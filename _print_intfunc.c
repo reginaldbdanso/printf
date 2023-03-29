@@ -39,6 +39,6 @@ int _print_intfunc(va_list newargums)
 		}
 	}
 	else
-		return (-1);
+	return (-1);
 	return (count);
 }
