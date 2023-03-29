@@ -24,7 +24,7 @@ int _switch_case_function(const char *c, va_list newargums)
 			break;
 		case 'd':
 		case 'i':
-			counter += _print_int(newargums);
+			counter += _print_intfunc(newargums);
 			break;
 		case 'b':
 			counter += _print_binfunc(newargums);
