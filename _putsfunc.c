@@ -1,7 +1,7 @@
 #include "main.h"
 /**
- * _puts - prints a string, followed by a new line, to stdout.
- * @s: pointer
+ * _putsfunc - prints a string, followed by a new line, to stdout.
+ * @newargums: va_list variable (string)
  * Return: number of characters printed
  */
 

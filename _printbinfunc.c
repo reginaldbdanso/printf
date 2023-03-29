@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * _print_bin - prints an integer as a string.
- * @num: positive number to be printed
+ * _print_binfunc - prints an integer as a string.
+ * @newargums: positive number to be printed
  * Return: number of characters printed
  */
 
