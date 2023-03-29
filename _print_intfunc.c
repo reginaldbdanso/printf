@@ -6,11 +6,12 @@
  * Return: number of characters printed
  */
 
-int _print_intfunc(va_list num)
+int _print_intfunc(va_list newargums)
 {
 	unsigned int tmp;
 	int n = 0, i = 0, x = 0, count = 0;
-	n = va_arg(num, int);
+
+	n = va_arg(newargums, int);
 	if (n <= INT_MAX && n >= INT_MIN)
 	{
 		if (n < 0)
