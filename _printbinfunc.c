@@ -4,7 +4,6 @@
  * print_binary - prints a number in binary
  * @num: number to be printed
  * Return: count of digits
- *
  */
 
 int print_binary(unsigned int num)
