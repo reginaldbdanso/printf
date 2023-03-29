@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 				counter += _putchar(format[index]);
 				return (-1);
 			}
-			else
+		else
 			{
 			counter += _switch_case_function((format + index + 1), argums);
 			index++;
