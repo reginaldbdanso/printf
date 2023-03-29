@@ -31,7 +31,6 @@ int _printf(const char *format, ...)
 			index++;
 			continue;
 			}
-
 		}
 		counter += _putchar(format[index]);
 	}
