@@ -21,6 +21,7 @@ int _print_intfunc(va_list newargums)
 			n = -n;
 		}
 		tmp = n;
+		
 		while (tmp / 10 > 0)
 		{
 			tmp /= 10;
