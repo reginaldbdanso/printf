@@ -6,8 +6,9 @@
  * Return: number of characters printed
  */
 
-int _print_bin(unsigned int num)
+int _print_binfunc(va_list newargums)
 {
+	unsigned int num = va_arg(newargums, int);
 	int i, rder, counter = 0, index = 0, temp_num = num, num_digits = 0;
 	char *str;
 

@@ -6,8 +6,9 @@
  * Return: number of characters printed
  */
 
-int _print_int(int num)
+int _print_intfunc(va_list newargums)
 {
+	int num = va_arg(newargums, int);
 	int i, counter = 0, index = 0, temp_num = num, num_digits = 0;
 	char *str;
 
@@ -22,7 +23,7 @@ int _print_int(int num)
 	/* allocate a buffer to hold the string representation of the number*/
 	str = malloc(sizeof(char) * num_digits + 1);
 	if (str == NULL)
-		return (1);
+		return (-1);
 
 	/* handle negative numbers*/
 	if (num < 0)
@@ -45,7 +46,7 @@ int _print_int(int num)
 	}
 	else
 	{
-		return (0);
+		return (-1);
 	}
 	return (counter);
 }
