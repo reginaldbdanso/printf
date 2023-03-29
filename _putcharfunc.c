@@ -17,5 +17,5 @@ int _putcharfunc(va_list newargums)
 	if (counter == 1)
 		return (counter);
 	else
-		return (0);
+		return (-1);
 }

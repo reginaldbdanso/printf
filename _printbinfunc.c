@@ -22,7 +22,7 @@ int _print_binfunc(va_list newargums)
 		/* allocate a buffer to hold the string representation of the number*/
 		str = malloc(sizeof(char) * num_digits + 1);
 		if (str == NULL)
-			return (0);
+			return (-1);
 
 		else
 		{
@@ -42,7 +42,7 @@ int _print_binfunc(va_list newargums)
 	}
 	else
 	{
-		return (0);
+		return (-1);
 	}
 	return (counter);
 }

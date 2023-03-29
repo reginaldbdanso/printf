@@ -16,5 +16,5 @@ int _putchar(char c)
 	if (counter == 1)
 		return (counter);
 	else
-		return (0);
+		return (-1);
 }
