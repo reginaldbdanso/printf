@@ -16,7 +16,7 @@ int _print_intfunc(va_list newargums)
 	{
 		if (n < 0)
 		{
-		_putchar('-');
+			_putchar('-');
 			count++;
 			n = -n;
 		}
