@@ -9,13 +9,13 @@
 int _print_hexlfunc(va_list newargums)
 {
 	int counter = 0, decimalnum, i = 0, temp;
-	char hexadecimalnum[100]; 
+	char hexadecimalnum[100];
 
 	decimalnum = va_arg(newargums, int);
 	if (decimalnum == 0)
 	{
 		counter += _putchar('0');
-		return(counter);
+		return (counter);
 	}
 
 	while (decimalnum != 0)
