@@ -14,7 +14,7 @@ int print_binary(unsigned int num)
 	count = 0;
 	if (num / 2 != 0)
 		count += print_binary(num / 2);
-	_putchar (num % 2 ==  '0' : '1');
+	_putchar (num % 2 == 0 ? '0' : '1');
 	count++;
 	
 	return (count);
