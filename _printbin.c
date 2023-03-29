@@ -13,28 +13,31 @@ int _print_bin(unsigned int num)
 
 	if (num <= UINT_MAX)
 	{
-	do {
-	num_digits++;
-	temp_num /= 10;
-	} while (temp_num > 0);
+		do {
+		num_digits++;
+		temp_num /= 10;
+		} while (temp_num > 0);
 
-	/* allocate a buffer to hold the string representation of the number*/
-	str = malloc(sizeof(char) * num_digits + 1);
-	if (str == NULL)
-		return (1);
+		/* allocate a buffer to hold the string representation of the number*/
+		str = malloc(sizeof(char) * num_digits + 1);
+		if (str == NULL)
+			return (0);
 
-	/* convert the number to binary*/
-	do {
-	rder = num % 2;
-	num = num / 2;
-	str[index++] = rder + '0';
-	} while (num > 0);
+		else
+		{
+			/* convert the number to binary*/
+			do {
+			rder = num % 2;
+			num = num / 2;
+			str[index++] = rder + '0';
+			} while (num > 0);
 
-	/* write the string to stdout in reverse order*/
-	for (i = index - 1; i >= 0; i--)
-	{
-		counter += write(1, &str[i], 1);
-	}
+			/* write the string to stdout in reverse order*/
+			for (i = index - 1; i >= 0; i--)
+			{
+				counter += write(1, &str[i], 1);
+			}
+		}
 	}
 	else
 	{
