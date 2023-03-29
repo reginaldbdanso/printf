@@ -14,6 +14,8 @@ int _putcharfunc(va_list newargums);
 int _putsfunc(va_list newargums);
 int _print_intfunc(va_list newargums);
 int _print_binfunc(va_list newargums);
+int print_binary(unsigned int num);
+
 
 
 int _printf(const char *format, ...);

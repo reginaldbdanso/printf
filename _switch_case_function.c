@@ -27,7 +27,7 @@ int _switch_case_function(const char *c, va_list newargums)
 			counter += _print_intfunc(newargums);
 			break;
 		case 'b':
-			counter += _print_binfunc(newargums);
+			counter += print_binary(va_arg(newargums, int));
 			break;
 		default:
 			counter += _putchar(*(c - 1));

@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * _print_binfunc - prints a number in binary
- * @newargums: number to be printed
+ * print_binary - prints a number in binary
+ * @num: number to be printed
  * Return: count of digits
+ *
  */
 
-int _print_binfunc(va_list newargums)
+int print_binary(unsigned int num)
 {
-	unsigned int num = va_arg(newargums, int);
 	int count;
 
 	count = 0;
