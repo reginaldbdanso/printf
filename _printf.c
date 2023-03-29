@@ -35,5 +35,5 @@ int _printf(const char *format, ...)
 		counter += _putchar(format[index]);
 	}
 	va_end(argums);
-	return (counter);
+		return (counter);
 }
