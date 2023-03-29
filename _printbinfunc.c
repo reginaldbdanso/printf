@@ -1,49 +1,36 @@
 #include "main.h"
 
 /**
- * _print_binfunc - prints an integer as a string.
- * @newargums: positive number to be printed
+ * _print_binfunc - calls print_binary function
+ * @newargums: number to be printed
  * Return: number of characters printed
  */
-
 int _print_binfunc(va_list newargums)
 {
 	unsigned int num = va_arg(newargums, int);
-	int i, rder, counter = 0, index = 0, temp_num = num, num_digits = 0;
-	char *str;
+	int counter = 0;
 
-	if (num <= UINT_MAX)
-	{
-		do {
-		num_digits++;
-		temp_num /= 10;
-		} while (temp_num > 0);
-
-		/* allocate a buffer to hold the string representation of the number*/
-		str = malloc(sizeof(char) * num_digits + 1);
-		if (str == NULL)
-			return (-1);
-
-		else
-		{
-			/* convert the number to binary*/
-			do {
-			rder = num % 2;
-			num = num / 2;
-			str[index++] = rder + '0';
-			} while (num > 0);
-
-			/* write the string to stdout in reverse order*/
-			for (i = index - 1; i >= 0; i--)
-			{
-				counter += write(1, &str[i], 1);
-			}
-		}
-	}
-	else
-	{
-		return (-1);
-	}
+	counter = print_binary(num);
 	return (counter);
+
 }
 
+/**
+ * print_binary - prints a number in binary
+ * @num: number to be printed
+ * Return: count of digits
+ *
+ */
+
+int print_binary(unsigned int num)
+{
+	int count;
+
+	count = 0;
+	if (num / 2 != 0)
+		count += print_binary(num / 2);
+
+	_putchar (num % 2 == 0 ? '0' : '1');
+	count++;
+	return (count);
+}
