@@ -8,8 +8,8 @@
 
 int _print_uintfunc(va_list newargums)
 {
-	unsigned int tmp;
-	int n = 0, i = 0, x = 0, count = 0;
+	unsigned int tmp, n = 0;
+	int i = 0, x = 0, count = 0;
 
 	n = va_arg(newargums, int);
 	if (n <= UINT_MAX)

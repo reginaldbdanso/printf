@@ -8,7 +8,7 @@
 
 int _print_hexlfunc(va_list newargums)
 {
-	int counter = 0, decimalnum, i = 0, temp;
+	int counter = 0, decimalnum, i = 0, j, temp;
 	char hexadecimalnum[100];
 
 	decimalnum = va_arg(newargums, int);
@@ -28,7 +28,7 @@ int _print_hexlfunc(va_list newargums)
 		i++;
 		decimalnum /= 16;
 	}
-	for (int j = i - 1; j >= 0; j--)
+	for (j = i - 1; j >= 0; j--)
 	{
 		counter += _putchar(hexadecimalnum[j]);
 	}
