@@ -6,42 +6,38 @@
  * Return: number of characters printed
  */
 
-int _print_intfunc(va_list newargums)
+int _print_intfunc(va_list num)
 {
-	int num = va_arg(newargums, int);
-	int i, counter = 0, index = 0, temp_num = num, num_digits = 0;
-	char *str;
-
-	if (num >= INT_MIN && num <= INT_MAX)
-	{
-		/* count the number of digits in the number*/
-		do {
-		num_digits++;
-		temp_num /= 10;
-		} while (temp_num > 0);
-		/* allocate a buffer to hold the string representation of the number*/
-		str = malloc(sizeof(char) * num_digits + 1);
-		if (str == NULL)
-			return (-1);
-
-		/* handle negative numbers*/
-		if (num < 0)
-		{
-			counter += _putchar('-');
-			num = -num;
-		}
-		/* convert the number to a string*/
-		do {
-		str[index++] = num % 10 + '0';
-		num /= 10;
-		} while (num > 0);
-		/* write the string to stdout in reverse order*/
-		for (i = index - 1; i >= 0; i--)
-		{
-			counter += write(1, &str[i], 1);
-		}
-	}
-	else
-		return (-1);
-	return (counter);
+    unsigned int tmp;
+    int n = 0, i = 0, x = 0, count = 0;
+    n = va_arg(num, int);
+    if (n <= INT_MAX && n >= INT_MIN)
+    {
+        if (n < 0)
+        {
+            _putchar('-');
+            count++;
+            n = -n;
+        }
+        tmp = n;
+        while (tmp / 10 > 0)
+        {
+            tmp /= 10;
+            i++;
+        }
+        tmp = n;
+        while (i >= 0)
+        {
+            for (x = 0; x < i; x++)
+                tmp /= 10;
+            tmp %= 10;
+            _putchar(tmp + '0');
+            count++;
+            i--;
+            tmp = n;
+        }
+    }
+    else
+        return (-1);
+    return (count);
 }
