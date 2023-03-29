@@ -32,11 +32,11 @@ int _print_binfunc(va_list newargums)
 			num = num / 2;
 			str[index++] = rder + '0';
 			} while (num > 0);
-
+			str[index] = '\0';
 			/* write the string to stdout in reverse order*/
 			for (i = index - 1; i >= 0; i--)
 			{
-				counter += write(1, &str[i], 1);
+				counter += _putchar(str[i]);
 			}
 		}
 	}
