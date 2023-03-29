@@ -10,7 +10,7 @@
 int _switch_case_function(const char *c, va_list newargums)
 {
 	int counter = 0;
-	
+
 	/* handle format specifiers */
 	switch (*c)
 	{

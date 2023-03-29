@@ -12,7 +12,7 @@ int _putcharfunc(va_list newargums)
 {
 	int counter;
 	char car = (va_arg(newargums, int));
-	
+
 	counter = write(1, &car, 1);
 	if (counter == 1)
 		return (counter);
