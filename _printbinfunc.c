@@ -8,12 +8,8 @@
 
 int _print_binfunc(va_list newargums)
 {
-	int counter = 0;
-
-	if ((va_arg(newargums, int)) <= UINT_MAX)
-	{
 	unsigned int num = va_arg(newargums, int);
-	int i, rder, index = 0, temp_num = num, num_digits = 0;
+	int i, rder, counter = 0, index = 0, temp_num = num, num_digits = 0;
 	char *str;
 
 	do {
@@ -38,11 +34,7 @@ int _print_binfunc(va_list newargums)
 	{
 		counter += write(1, &str[i], 1);
 	}
-	}
-	else
-	{
-		return (-1);
-	}
+
 	return (counter);
 }
 
