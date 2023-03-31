@@ -22,15 +22,28 @@ int _print_binfunc(va_list newargums)
  *
  */
 
+/**
+ * int print_binary(unsigned int num)
+ *{
+ *	int count;
+ *
+ *	count = 0;
+ *	if (num / 2 != 0)
+ *		count += print_binary(num / 2);
+ *
+ *	_putchar (num % 2 == 0 ? '0' : '1');
+ *	count++;
+ *	return (count);
+ *}
+ */
 int print_binary(unsigned int num)
 {
-	int count;
+	int counter = 0;
 
-	count = 0;
-	if (num / 2 != 0)
-		count += print_binary(num / 2);
+	if (num > 1)
+		counter += print_binary(num / 2);
 
-	_putchar (num % 2 == 0 ? '0' : '1');
-	count++;
-	return (count);
+	_putchar(num % 2 + '0');
+	counter++;
+	return (counter);
 }
