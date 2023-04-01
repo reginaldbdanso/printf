@@ -13,15 +13,11 @@ int _print_intfunc(va_list newargums)
 	n = va_arg(newargums, int);
 	if (n <= INT_MAX && n >= INT_MIN)
 	{
-		if (n < 0)
-		{
-			_putchar('-');
-			counter++;
-			n = -n;
-		}
 		counter += _print_int(n);
 	}
 	else
+	{
 		return (-1);
+	}
 	return (counter);
 }

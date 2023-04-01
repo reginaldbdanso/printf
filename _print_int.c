@@ -10,10 +10,13 @@ int _print_int(int num)
 {
 	int counter = 0;
 
+	if (num == INT_MIN)
+		num = num + 1;
+
 	if (num < 0)
 	{
 		_putchar('-');  /*print a negative sign*/
-		num = -num;  /*make the integer positive*/
+		num = num * -1;  /*make the integer positive*/
 		counter++;
 	}
 
@@ -23,7 +26,14 @@ int _print_int(int num)
 		counter += _print_int(num / 10);
 	}
 	/*print the last digit of the integer*/
-	_putchar(num % 10 + '0');
+	if(num == INT_MAX)
+	{
+		putchar(num % 10 + '1');
+	}
+	else
+	{
+		putchar(num % 10 + '0');
+	}
 	counter++;
 
 	return (counter);
