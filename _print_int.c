@@ -20,7 +20,7 @@ int _print_int(int num)
 	if (num > 9)
 	{
 		/*recursively print the integer digits*/
-		print_int(num / 10);
+		_print_int(num / 10);
 	}
 	/*print the last digit of the integer*/
 	counter += _putchar(num % 10 + '0');
