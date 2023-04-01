@@ -8,10 +8,13 @@
 
 int _print_int(int num)
 {
-	int counter = 0;
+	int temp, counter = 0;
 
 	if (num == INT_MIN)
+	{
+		temp = num;
 		num = num + 1;
+	}
 
 	if (num < 0)
 	{
@@ -26,7 +29,7 @@ int _print_int(int num)
 		counter += _print_int(num / 10);
 	}
 	/*print the last digit of the integer*/
-	if(num == INT_MAX)
+	if(num == INT_MAX && temp == INT_MIN)
 	{
 		putchar(num % 10 + '1');
 	}
