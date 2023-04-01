@@ -8,38 +8,21 @@
 
 int _print_int(int num)
 {
-	unsigned int tmp;
-	int i = 0, x = 0, count = 0;
+	int counter = 0;
 
-	if (num <= INT_MAX && num >= INT_MIN)
+	if (num < 0)
 	{
-		if (num < 0)
-		{
-			_putchar('-');
-			count++;
-			num = -num;
-		}
-
-		tmp = num;
-		while (tmp / 10 > 0)
-		{
-			tmp /= 10;
-		i++;
-		}
-
-		tmp = num;
-		while (i >= 0)
-		{
-			for (x = 0; x < i; x++)
-			tmp /= 10;
-			tmp %= 10;
-			_putchar(tmp + '0');
-			count++;
-			i--;
-			tmp = num;
-		}
+		_putchar('-');  /*print a negative sign*/
+		num = -num;  /*make the integer positive*/
+		counter++;
 	}
-	else
-		return (-1);
-	return (count);
+
+	if (num > 9)
+	{
+		/*recursively print the integer digits*/
+		print_int(num / 10);
+	}
+	/*print the last digit of the integer*/
+	counter += _putchar(num % 10 + '0');
+	return (counter);
 }

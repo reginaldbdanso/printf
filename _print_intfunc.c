@@ -8,8 +8,7 @@
 
 int _print_intfunc(va_list newargums)
 {
-	unsigned int tmp;
-	int n = 0, i = 0, x = 0, count = 0;
+	int n, counter = 0;
 
 	n = va_arg(newargums, int);
 	if (n <= INT_MAX && n >= INT_MIN)
@@ -17,30 +16,12 @@ int _print_intfunc(va_list newargums)
 		if (n < 0)
 		{
 			_putchar('-');
-			count++;
+			counter++;
 			n = -n;
 		}
-
-		tmp = n;
-		while (tmp / 10 > 0)
-		{
-			tmp /= 10;
-		i++;
-		}
-
-		tmp = n;
-		while (i >= 0)
-		{
-			for (x = 0; x < i; x++)
-			tmp /= 10;
-			tmp %= 10;
-			_putchar(tmp + '0');
-			count++;
-			i--;
-			tmp = n;
-		}
+		counter += _print_int(n);
 	}
 	else
 		return (-1);
-	return (count);
+	return (counter);
 }
