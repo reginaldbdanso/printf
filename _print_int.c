@@ -1,43 +1,45 @@
 #include "main.h"
 
 /**
- * _print_int - prints an integer as a string
- * @num: number to be printed
+ * _print_intfunc - prints an integer as a string
+ * @n: number to be printed
  * Return: number of characters printed
  */
 
-int _print_int(int num)
+int _print_int(int n)
 {
-	int temp, counter = 0;
+	unsigned int tmp;
+	int i = 0, x = 0, counter = 0;
 
-	if (num == INT_MIN)
+	if (n <= INT_MAX && n >= INT_MIN)
 	{
-		temp = num;
-		num = num + 1;
-	}
-
-	if (num < 0)
-	{
-		_putchar('-');  /*print a negative sign*/
-		num = num * -1;  /*make the integer positive*/
-		counter++;
-	}
-
-	if (num > 9)
-	{
-		/*recursively print the integer digits*/
-		counter += _print_int(num / 10);
-	}
-	/*print the last digit of the integer*/
-	if(num == INT_MAX && temp == INT_MIN)
-	{
-		putchar(num % 10 + '1');
+		if (n < 0)
+		{
+			_putchar('-');
+			counter++;
+			n = -n;
+		}
+		
+		tmp = n;
+		while (tmp / 10 > 0)
+		{
+			tmp /= 10;
+		i++;
+		}
+		
+		tmp = n;
+		while (i >= 0)
+		{
+			for (x = 0; x < i; x++)
+			tmp /= 10;
+			tmp %= 10;
+			_putchar(tmp + '0');
+			counter++;
+			i--;
+			tmp = n;
+		}
 	}
 	else
-	{
-		putchar(num % 10 + '0');
-	}
-	counter++;
-
+		return (-1);
 	return (counter);
 }
